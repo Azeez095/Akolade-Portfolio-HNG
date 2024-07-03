@@ -1,41 +1,239 @@
-*{
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #d1d5db;
+    min-height: 100vh;
+    width: 100vw;
     text-align: center;
+    overflow-x: hidden;
 }
 
-.container{
+.container {
+    width: 100%;
     height: 100vh;
-    width: 100vw;
+    overflow-x: hidden;
 }
+
 nav {
-    background-color: white;
-    
-    
+    background-color: #333333;
+    color: white;
+    max-width: 100%;
+    height: 4rem;
+    padding: 1rem 0;
 }
 
 .nav-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style-type: none;
-    }
+    gap: 2rem;
+}
 
 .nav-link {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .nav-link:hover {
-    color:gray
+    color: gray;
 }
 
 main {
-    display:grid ;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
 }
+
+.main-content {
+    width: auto;
+    padding: 1rem;   
+}
+
+.main-para {
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.goal-detail {
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 0.8rem 0.8rem;
+    text-align: left;
+    margin: 1rem 1rem;
+}
+
+.goal-detail> h3 {
+    margin-bottom: 0.5rem;
+}
+
+.goal-detail >p >a{
+    text-decoration: none;
+}
+
+.tech-goals >p{
+    text-align: left;
+    margin: 1rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+
+footer{
+    background-color:black;
+    padding: 1rem 0.2rem;
+}
+
+.footer{
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-around;
+}
+footer >h4{
+    color: white;
+}
+
+.time *{
+    color:white;
+    text-align: left;
+}
+.time{
+    max-width: 50%;
+}
+.time >small{
+    color:gray;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.contact{
+    max-width: 50%;
+    color:white;
+    text-align: left;
+}
+
+
+.contact-name >small{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: gray;
+    max-width: 20%;
+}
+
+.contact-email >a{
+    color: gray;
+    font-size: 0.8rem;
+}
+
+@media (min-width: 768px) and (max-width: 2000px) {
+    .main-el{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "img main-content";
+        gap:1rem;
+        grid-template-areas: "main-content img";
+        margin-right: 1rem;
+    }
+
+    img{
+        grid-area: img;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .main-content{
+        grid-area: main-content;
+    }
+    .main-content{
+        padding-top: 0px;
+    }
+    .goal-el{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tech-goals{
+        margin-top: 2rem;
+    }
+  }
+  @media (min-width: 768px){
+    .main-para {
+        text-align: left;
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    } 
+    .main-content >h3, .tech-goals >h3,.nav-list >li{
+        font-size: 1.4rem;
+    }
+    .goal-detail >h4, footer >h4{
+        font-size: 1.2rem;
+    }
+    .tech-goals >p{
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+    .time>h6, .contact-name>h6, .contact-email>h6{
+        font-size: 1rem;
+    }
+}
+  @media (min-width: 1000px){
+    .main-para {
+        text-align: left;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.75;
+    } 
+    .goal-detail >h4, footer >h4{
+        font-size: 1.3rem;
+    }
+    .main-content >h3{
+        font-size: 1.5rem;
+    }
+    .tech-goals >h3{
+        font-size: 1.5rem;
+    }
+    .nav-list >li{
+        font-size: 1.5rem;
+    }
+    .tech-goals >p{
+        font-size: 1.2rem;
+        line-height: 1.75;
+    }
+    .time>h6, .contact-name>h6, .contact-email>h6{
+        font-size: 1.3rem;
+    }
+    .contact-email >a{
+        font-size:1.2rem ;
+    }
+
+  }
+  @media (min-width: 1300px){
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f4f4f4;
+    }
+    .container{
+        max-width: 1000px
+    }
+  }
+
