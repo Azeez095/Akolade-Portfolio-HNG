@@ -83,6 +83,9 @@ img{
 .goal-detail >p >a{
     text-decoration: none;
 }
+.goal-detail >p >a:visited{
+    color: blue;
+}
 
 .tech-goals >p{
     text-align: left;
